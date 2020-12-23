@@ -8,7 +8,6 @@ public class Tower : MonoBehaviour
     [SerializeField] private Text _levelNumberText;
 
     private NoHeartPanel _noHeartPanel;
-    private AudioSource _buttonClickSound;
 
     public bool IsUnlocked;
     public bool IsComplete;
@@ -16,8 +15,6 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         _noHeartPanel = FindObjectOfType<NoHeartPanel>();
-        _buttonClickSound = FindObjectOfType<SoundButtonClick>().GetComponent<AudioSource>();
-
     }
     private void OnMouseDown()
     {
@@ -25,7 +22,6 @@ public class Tower : MonoBehaviour
         {
             if (!HeartController.heartController.IsAllHeartsLost)
             {
-                _buttonClickSound.Play();
                 _startLevelPanel.SetActive(true);
                 _levelNumberText.text = "Level " + _levelNumber.ToString();
                 StartGame.LevelNumber = _levelNumber;

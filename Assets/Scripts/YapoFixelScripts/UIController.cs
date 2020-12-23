@@ -12,11 +12,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private Button _startButton;
     [SerializeField] private Button _analizeButton;
 
-    private AudioSource _buttonClickSound;
-
     private void Start()
     {
-        _buttonClickSound = FindObjectOfType<SoundButtonClick>().GetComponent<AudioSource>();
+
         uiController = this;
         _gameManager.GetColors();
     }
@@ -28,7 +26,6 @@ public class UIController : MonoBehaviour
     }
     public void ButtonAnalyzeOnClick()
     {
-        _buttonClickSound.Play();
         _gameManager.Analyze();
     }
     public void RestartButtonOnClick()

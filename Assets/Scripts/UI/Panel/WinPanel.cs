@@ -10,10 +10,8 @@ public class WinPanel : MonoBehaviour
     [SerializeField] private Text _winLoseText;
     [SerializeField] private Text _rewardText;
 
-    private AudioSource _buttonClickSound;
     private void Start()
     {
-        _buttonClickSound = FindObjectOfType<SoundButtonClick>().GetComponent<AudioSource>();
         _titleText.text = "Level " + SceneManager.GetActiveScene().buildIndex.ToString();
         _winLoseText.text = "You win!";
     }
@@ -33,7 +31,6 @@ public class WinPanel : MonoBehaviour
 
     public void BackToLastScene()
     {
-        _buttonClickSound.Play();
         SceneManager.LoadScene("Main");
     }
 }

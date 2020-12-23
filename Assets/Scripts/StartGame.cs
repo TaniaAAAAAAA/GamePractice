@@ -8,16 +8,9 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviour
 {
     public static int LevelNumber;
-    private AudioSource _buttonClickSound;
-
-    private void Awake()
-    {
-        _buttonClickSound = FindObjectOfType<SoundButtonClick>().GetComponent<AudioSource>();
-    }
 
     public void LoadNeedScene()
     {
-        _buttonClickSound.Play();
         SceneManager.LoadScene(LevelNumber);
     }
 }
